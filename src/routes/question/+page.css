@@ -1,0 +1,156 @@
+/* CSS */
+.div {
+    border-color: rgba(0, 0, 0, 1);
+    border-style: solid;
+    border-width: 5px;
+    background-color: #2a3698;
+    color: #000;
+    font-weight: 400;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    padding: 5vh 5vw;
+    margin : auto;  
+    box-sizing: content-box;
+    height: 85vh;
+    width : 80vw; /* Ensure the div fills the entire viewport height */
+    overflow: hidden; /* Hide overflow to prevent scrolling */
+  }
+  
+  .div-2 {
+    background-color: #d9d9d9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 25vh;
+    width: 80vw; /* Set width to match the parent div */
+    margin: auto; /* Center horizontally */
+    padding: 18vh 0; /* Adjust vertical padding */
+  }
+  
+  .div-3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 10vh 0;
+  }
+  
+  .div-4 {
+    font-family: sans-serif;
+    /* Ensure text wraps within div */
+    /* Fallback for older browsers */
+    font-weight: bold;
+    align-items: center;
+  }
+  
+  .div-5 {
+    align-self: center;
+    font: sans-serif;
+    align-items: center;
+    margin-top: -15vh;
+  }
+  
+
+/* CSS */
+.button-10 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 6px 14px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
+  border-radius: 6px;
+  border: none;
+
+  color: #fff;
+  background: linear-gradient(180deg, #4B91F7 0%, #367AF6 100%);
+   background-origin: border-box;
+  box-shadow: 0px 0.5px 1.5px rgba(54, 122, 246, 0.25), inset 0px 0.8px 0px -0.25px rgba(255, 255, 255, 0.2);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-10:focus {
+  box-shadow: inset 0px 0.8px 0px -0.25px rgba(255, 255, 255, 0.2), 0px 0.5px 1.5px rgba(54, 122, 246, 0.25), 0px 0px 0px 3.5px rgba(58, 108, 217, 0.5);
+  outline: 0;
+}
+  
+  /* Table styles */
+  table {
+    width: 100%;
+    /* Ensure the table fills the entire width of its container */
+    margin-top: 20px;
+    align-items: center; /* Add margin to separate the table from other elements */
+  }
+
+  .player-scores-container {
+    display: flex; /* Display players' scores horizontally */
+    justify-content: space-around; /* Evenly space the player scores */
+  }
+  .player-score img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  
+  .player-score {
+    border: 3px solid #ffff5f; /* Add border to each player's score */
+    padding: 3px;
+    margin: 5px; /* Add margin between player scores */
+    display: flex; /* Align player name and score horizontally */
+    align-items: center;
+    background-color: silver;
+    color: black;
+    text-emphasis: bold; /* Center align the content */
+  }
+  
+  .player-score span {
+    padding: 2px; /* Add padding to the spans */
+  }
+#buttons{
+    display: flex;
+    flex-direction: row;
+    column-gap: 10vh;
+    justify-content: center;
+    padding-top: 12vh;
+}
+  
+.timer {
+  margin-top: 10vh;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #fff;
+  background-color: #ff4500;
+  padding: 15px 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+.button-10.selected {
+  background: yellow !important; /* Override background color for selected buttons */
+}
+
+
+.arrow {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: flex;
+  flex-direction: row;
+  padding: 3px;
+}
+.down {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+.up {
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+}
+.playerscore-buttons{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 5px;
+}
