@@ -4,8 +4,6 @@ import os
 extension = ''
 if os.name == 'nt':  # Checking if the OS is Windows
     extension = '.exe'
-elif os.name == 'posix' and 'darwin' in os.uname().sysname.lower():  # Checking if the OS is macOS
-    extension = '.app'
 
 def main():
     rust_info = subprocess.check_output(['rustc', '-vV'], text=True)
