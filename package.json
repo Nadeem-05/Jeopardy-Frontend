@@ -6,6 +6,7 @@
 		"dev": "vite dev",
 		"build": "vite build",
 		"preview": "vite preview",
+		"build_py":"pyinstaller -F src-tauri/py/app.py --distpath src-tauri/sidecars/ --onefile -n apps",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"tauri": "tauri"
@@ -28,6 +29,7 @@
 	"type": "module",
 	"dependencies": {
 		"@builder.io/sdk-svelte": "^1.0.27",
-		"@neoconfetti/svelte": "^2.2.1"
+		"@neoconfetti/svelte": "^2.2.1",
+		"@tauri-apps/api": "^1.5.6"
 	}
 }

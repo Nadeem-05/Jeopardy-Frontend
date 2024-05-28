@@ -12,8 +12,14 @@
   },
   "tauri": {
     "allowlist": {
-      "dialog": {
-        "message": true
+      "fs" : {
+        "scope": ["$RESOURCE/*"]
+      },
+      "shell": {
+        "sidecar": true,
+        "scope": [
+          { "name": "sidecars/apps", "sidecar": true }
+        ]
       }
     },
     "bundle": {
@@ -23,7 +29,9 @@
       "deb": {
         "depends": []
       },
-      "externalBin": [],
+      "externalBin": [
+        "sidecars/apps"   
+      ],
       "icon": [
         "icons/32x32.png",
         "icons/128x128.png",
@@ -31,7 +39,7 @@
         "icons/icon.icns",
         "icons/icon.ico"
       ],
-      "identifier": "com.jeopardy.nadeem.dev",
+      "identifier": "com.nadeem.jeopardy.dev",
       "longDescription": "",
       "macOS": {
         "entitlements": null,
@@ -40,7 +48,9 @@
         "providerShortName": null,
         "signingIdentity": null
       },
-      "resources": [],
+      "resources": [
+        "sidecars/data.json"
+      ],
       "shortDescription": "",
       "targets": "all",
       "windows": {
@@ -57,11 +67,11 @@
     },
     "windows": [
       {
-        "fullscreen": false,
-        "height": 600,
+        "fullscreen": true,
+        "height": 1920,
         "resizable": true,
         "title": "jeopardy",
-        "width": 800
+        "width": 1080
       }
     ]
   }
