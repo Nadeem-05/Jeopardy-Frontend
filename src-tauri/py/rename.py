@@ -1,29 +1,24 @@
-import subprocess
+from sys import platform
+import platform
 import os
 
-extension = ''
-if os.name == 'nt':  # Checking if the OS is Windows
-    extension = '.exe'
 
-def main():
-    rust_info = subprocess.check_output(['rustc', '-vV'], text=True)
-    target_triple = None
-    for line in rust_info.split('\n'):
-        if line.startswith('host:'):
-            target_triple = line.split(': ')[1]
-            break
+if platform == "linux" or platform == "linux2":
+    src_path = f'src-tauri/sidecars/apps'
+    dest_path = f'src-tauri/sidecars/apps-x86_64-unknown-linux-gnu'
+    os.rename()
+elif platform == "darwin":
+    if platform.processor() == "i386":
+        src_path = f'src-tauri/sidecars/apps'
+        dest_path = f'src-tauri/sidecars/apps-x86_64-apple-darwin'
+        os.rename(src_path, dest_path)
+    elif platform.processor() == "arm":
+        src_path = f'src-tauri/sidecars/apps'
+        dest_path = f'src-tauri/sidecars/apps-aarch64-apple-darwin'
+        os.rename(src_path, dest_path)
 
-    if not target_triple:
-        print('Failed to determine platform target triple')
-        return
+elif platform == "win32":
+    src_path = f'src-tauri/sidecars/apps.exe'
+    dest_path = f'src-tauri/sidecars/apps-x86_64-pc-windows-msvc.exe'
+    os.rename()
 
-    src_path = f'src-tauri/sidecars/apps{extension}'
-    dest_path = f'src-tauri/sidecars/apps-{target_triple}{extension}'
-    
-    os.rename(src_path, dest_path)
-    print(f'Renamed {src_path} to {dest_path}')
-
-try:
-    main()
-except Exception as e:
-    raise e
