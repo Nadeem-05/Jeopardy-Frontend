@@ -12,9 +12,6 @@
   },
   "tauri": {
     "allowlist": {
-      "fs" : {
-        "scope": ["$RESOURCE/*"]
-      },
       "shell": {
         "sidecar": true,
         "scope": [
@@ -48,9 +45,7 @@
         "providerShortName": null,
         "signingIdentity": null
       },
-      "resources": [
-        "sidecars/data.json"
-      ],
+      "resources": [],
       "shortDescription": "",
       "targets": "all",
       "windows": {
