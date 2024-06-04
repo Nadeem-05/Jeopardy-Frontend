@@ -6,6 +6,12 @@
         goto("/jeporady");
       }
     }
+    async function goToJson() {
+      if (typeof window !== 'undefined') {
+        goto("/uploadjson");
+      }
+    }
+
 </script>
 <div class="div">
     <div class="div-2">
@@ -14,7 +20,9 @@
         <p>Click the button below to start the game</p>
         <small>Check the config before you start!</small>
         <button on:click={() => goToJeopardy()} class="button-10">
-            Start
+            Start</button>
+        <button on:click={() => goToJson()} class="button-10">
+              Upload Json</button>
        </div></div>
   </div>
   

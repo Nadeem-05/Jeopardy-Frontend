@@ -6,6 +6,11 @@ CORS(app)
 import pathlib
 desktop = pathlib.Path.home() / 'Desktop'
 
+rounds = 0
+playersa = 0
+round_data = 0
+question_data = 0
+
 @app.route('/')
 def jeopardy_board():
     round_number = request.args.get('round')
@@ -58,7 +63,15 @@ def completedQuestion():
 def totalrounds():
     return jsonify({"rounds": rounds})
 
-
+@app.route("/uploadjson", methods = {"POST"})
+def uploadJson():
+    if request.method == "POST":
+        global rounds,round_data,playersa,question_data
+        rounds = request.json["rounds"]
+        round_data = request.json["round_data"]
+        playersa = request.json["playersa"]
+        question_data = request.json["question_data"]
+        return json.dumps({'success':True}), 200, {'ContentType':'application/json'} 
 @app.route("/updateScore", methods=['POST'])
 def updateScore():
     dct = {element['id']: element for element in playersa}
@@ -71,11 +84,4 @@ def updateScore():
 
 
 if __name__ == '__main__':
-    with open(f'{desktop}/data.json', 'r') as file:
-        data = json.load(file)
-    rounds = data['rounds']
-    playersa = data['playersa']
-    round_data = data['round_data']
-    question_data = data['question_data']
-
     app.run(debug=True,port=5000)
